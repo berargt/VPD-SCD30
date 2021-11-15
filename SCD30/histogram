@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#cat co2.dat | ./vpd.pl > out
+#echo Created datafile
+echo Early
+grep Early out | wc -l
+echo Prop
+grep Prop out| wc -l
+echo Mid
+grep Mid out| wc -l
+echo HI
+grep HI out| wc -l
+echo LO
+grep LO out| wc -l
