@@ -34,6 +34,19 @@ removed that damn '-l' from pigpiod launch
   994  ll /run/sensors/scd30/last 
   995  tail -f  /run/sensors/scd30/last 
 
+Directories;
+
+MATPLOTLIB - Plot the data
+   root directory contains files that plots all the data. It generates the
+   VPD ranges and also plots them
+
+SCD30 - Collect the data
+
+
+
+
+
+
 
 
 
