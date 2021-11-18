@@ -29,9 +29,9 @@ m = 500
 def animate(i):
     ax.plot(data['RH'][i*m], 83-data['°F'][i*m]+59, 'bo') # draw the next line
     #print(83-data['RH'][i*m]+59)
-    print (data['Date'][i*m])
+    print (data['Date'][i*m], data['RH'][i*m], data['°F'][i*m])
 
 # setup and animation
-anim = FuncAnimation( fig, animate, interval=0, frames=int(len(data['RH'])/m)-1)
+anim = FuncAnimation( fig, animate, interval=1000, frames=int(len(data['RH'])/m)-1)
 
 plt.show()
