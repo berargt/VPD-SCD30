@@ -30,6 +30,7 @@ data['CO2'] = data['CO2']/100
 data['RH'] = data['RH']/10
 
 print(data['RH'].mean())
+print(data['°C'].max()*9/5+32)
 
 ax1.plot_date(data['Date'],data['°C'],marker='None',linestyle='solid')
 ax1.plot_date(data['Date'],data['VPD'],marker='None',linestyle='solid')
