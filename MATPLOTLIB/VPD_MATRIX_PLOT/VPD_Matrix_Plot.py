@@ -15,9 +15,12 @@ plt.rcParams["figure.figsize"] = [20.00, 10.00]
 plt.rcParams["figure.autolayout"] = False
 im = plt.imread("VPD_Matrix.jpg")
 fig, ax = plt.subplots()
+
+plt.gca().invert_yaxis()
+
 im = ax.imshow(im, extent=[32.5, 92.5, 82.5, 58.5])
 # 142 =  83-data['°F'][i*m]+59,
-ax.plot(data['RH'], 142-data['°F'], ls='solid', linewidth=1, color='black')
+ax.plot(data['RH'], data['°F'], 'bo')
 # 35 - 2.5 to 90 + 2.5
 #x = np.array(range(55))
 #ax.plot(x, x, ls='dotted', linewidth=2, color='red')

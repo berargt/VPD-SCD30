@@ -15,6 +15,9 @@ plt.rcParams["figure.figsize"] = [20.00, 10.00]
 plt.rcParams["figure.autolayout"] = False
 im = plt.imread("VPD_Matrix.jpg")
 fig, ax = plt.subplots()
+
+plt.gca().invert_yaxis()
+
 im = ax.imshow(im, extent=[32.5, 92.5, 82.5, 58.5])
 #ax.plot(data['RH'], data['°F'], ls='solid', linewidth=1, color='black')
 # 35 - 2.5 to 90 + 2.5
@@ -27,7 +30,7 @@ plt.yticks(np.arange(59, 83, 1.0))
 m = 500
 
 def animate(i):
-    ax.plot(data['RH'][i*m], 83-data['°F'][i*m]+59, 'bo') # draw the next line
+    ax.plot(data['RH'][i*m], data['°F'][i*m], 'bo') # draw the next line
     #print(83-data['RH'][i*m]+59)
     print (data['Date'][i*m], data['RH'][i*m], data['°F'][i*m])
 
