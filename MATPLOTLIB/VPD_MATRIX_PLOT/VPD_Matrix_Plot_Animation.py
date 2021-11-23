@@ -35,6 +35,6 @@ def animate(i):
     print (data['Date'][i*m], data['RH'][i*m], data['°F'][i*m])
 
 # setup and animation
-anim = FuncAnimation( fig, animate, interval=1000, frames=int(len(data['RH'])/m)-1)
+anim = FuncAnimation( fig, animate, interval=10, frames=int(len(data['RH'])/m)-1)
 
 plt.show()
