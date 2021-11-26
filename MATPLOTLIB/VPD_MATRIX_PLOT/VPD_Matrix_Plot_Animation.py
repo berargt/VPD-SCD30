@@ -9,6 +9,7 @@ from matplotlib import dates as mpl_dates
 import pandas as pd
 import csv
 
+global cur_color
 data = pd.read_csv('Matrix_Data.csv')
 
 plt.rcParams["figure.figsize"] = [20.00, 10.00]
@@ -29,12 +30,19 @@ plt.xticks(np.arange(35, 92, 5.0))
 plt.yticks(np.arange(59, 83, 1.0))
 m = 500
 
+cur_color = 'blue'
 def animate(i):
-    ax.plot(data['RH'][i*m], data['°F'][i*m], 'bo') # draw the next line
-    #print(83-data['RH'][i*m]+59)
-    print (data['Date'][i*m], data['RH'][i*m], data['°F'][i*m])
+    global cur_color
+    if (i==1):
+        if (cur_color=='blue'):
+            cur_color='red'
+        else:
+            cur_color='blue'
+
+    ax.plot(data['RH'][i*m], data['°F'][i*m], 'bo', color=cur_color) # draw the next line
+    print (cur_color, i, data['Date'][i*m], data['RH'][i*m], data['°F'][i*m])
 
 # setup and animation
-anim = FuncAnimation( fig, animate, interval=10, frames=int(len(data['RH'])/m)-1)
+anim = FuncAnimation(fig, animate, interval=1, frames=int(len(data['RH'])/m)-1)
 
 plt.show()
