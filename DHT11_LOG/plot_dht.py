@@ -28,12 +28,12 @@ color = 'tab:red'
 #data['RH'] = data['RH']/10
 
 print(data['RH'].mean())
-print(data['°F'].max()*9/5+32)
-print(data['°F'].min()*9/5+32)
+print(data['°F'].max())
+print(data['°F'].min())
 
 ax1.plot_date(data['Date'],data['°F'],marker='None',linestyle='solid')
 ax1.plot_date(data['Date'],data['RH'],marker='None',linestyle='solid')
-ax1.legend(['°F', 'RH'])
+ax1.legend(['%RH', '°F'])
 
 ax1.tick_params(axis='y', labelcolor=color)
 
@@ -45,7 +45,8 @@ ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
 #ax2.tick_params(axis='y', labelcolor=color)
 
 plt.gcf().autofmt_xdate()
-date_format = mpl_dates.DateFormatter('%d/%m/%Y %H:%M:%S')
+#date_format = mpl_dates.DateFormatter('%d/%m/%Y %H:%M:%S')
+date_format = mpl_dates.DateFormatter('%d/%m/%Y %H:%M')
 plt.gca().xaxis.set_major_formatter(date_format)
 plt.grid(which='both', axis='both')
 
