@@ -37,7 +37,7 @@ ax1.legend(['%RH', '°F'])
 
 ax1.tick_params(axis='y', labelcolor=color)
 
-ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+#ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
 
 #color = 'tab:purple'
 #ax2.set_ylabel('Status', color=color)  # we already handled the x-label with ax1
