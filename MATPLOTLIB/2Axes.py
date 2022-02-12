@@ -7,8 +7,8 @@ import pandas as pd
 import csv
 
 #plt.style.use('seaborn')
-#plt.style.use("fivethirtyeight")
-plt.xkcd()
+plt.style.use("fivethirtyeight")
+#plt.xkcd()
 
 #Date,Status,CO2,°C,RH,DP,VPAct,VPSat,VPD
 data = pd.read_csv('VPD.csv')
